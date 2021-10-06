@@ -1,0 +1,12 @@
+C:\Users\ronmc\Ronald_McCool_PO\Models\bin\Debug\net5.0\Models.deps.json
+C:\Users\ronmc\Ronald_McCool_PO\Models\bin\Debug\net5.0\Models.dll
+C:\Users\ronmc\Ronald_McCool_PO\Models\bin\Debug\net5.0\ref\Models.dll
+C:\Users\ronmc\Ronald_McCool_PO\Models\bin\Debug\net5.0\Models.pdb
+C:\Users\ronmc\Ronald_McCool_PO\Models\obj\Debug\net5.0\Models.csproj.AssemblyReference.cache
+C:\Users\ronmc\Ronald_McCool_PO\Models\obj\Debug\net5.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ronmc\Ronald_McCool_PO\Models\obj\Debug\net5.0\Models.AssemblyInfoInputs.cache
+C:\Users\ronmc\Ronald_McCool_PO\Models\obj\Debug\net5.0\Models.AssemblyInfo.cs
+C:\Users\ronmc\Ronald_McCool_PO\Models\obj\Debug\net5.0\Models.csproj.CoreCompileInputs.cache
+C:\Users\ronmc\Ronald_McCool_PO\Models\obj\Debug\net5.0\Models.dll
+C:\Users\ronmc\Ronald_McCool_PO\Models\obj\Debug\net5.0\ref\Models.dll
+C:\Users\ronmc\Ronald_McCool_PO\Models\obj\Debug\net5.0\Models.pdb
