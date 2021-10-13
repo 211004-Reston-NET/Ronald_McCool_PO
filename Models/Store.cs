@@ -1,29 +1,22 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-
+using System.Collections.Generic;
 namespace Models
 {
     public class Store
     {
-        private string _city;
-        public string City
+        private string _name;
+        private string _address;
+        private List<Product> _products;
+        private List<Order> _orders;
+        public Store() { }
+        public Store(string name, string address, List<Product> products, List<Order> orders)
         {
-            get { 
-                return _city; 
-                }
-            set {
-                //regex expression will find numer inside strin
-                if(!Regex.IsMatch(value,@"^[A-Za-z,]+$"))
-                //Throws exception if number found
-                throw new Exception("Invalid City Name");
-                 _city = value;
-                } 
-            
+
         }
-        
-        public string State { get; set; }
         public string Name { get; set; }
-        
-        
+        public string Address { get; set; }
+        public List<Product> Products { get; set; }
+        public List<Order> Orders { get; set;}
     }
 }
