@@ -10,28 +10,29 @@ namespace UI{
      
         public void SerialMain(){
         
-        Customer cust =new Customer(){
+        Customers cust =new Customers(){
             Name="Joskes",
             City="San Antonio",
             State="Texas"
         };
-        Customer cust2 =new Customer(){
+        Customers cust2 =new Customers(){
             Name="Mighty Bens",
             City="Corpus Christi",
             State="Texas"
         };
-        List<Customer> listOfCust =new List<Customer>();
+        List<Customers> listOfCust =new List<Customers>();
         listOfCust.Add(cust);
         listOfCust.Add(cust2);
             string _jsonString=JsonSerializer.Serialize(listOfCust, new JsonSerializerOptions{WriteIndented=true});
             //System.Console.WriteLine(_jsonString);
             File.WriteAllText(_filePath,_jsonString);
             _jsonString=File.ReadAllText(_filePath);
-            List<Customer> custList=JsonSerializer.Deserialize<List<Customer>>(_jsonString);
-            foreach(Customer item in listOfCust){
+            List<Customers> custList=JsonSerializer.Deserialize<List<Customers>>(_jsonString);
+            foreach(Customers item in listOfCust){
                 System.Console.WriteLine(item);
             }
             
         }
     }
+    
 }

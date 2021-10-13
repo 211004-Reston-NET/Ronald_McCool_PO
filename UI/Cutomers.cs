@@ -1,6 +1,6 @@
 using System;
 namespace UI{
-    public class Customer{
+    public class Customers{
         public override string ToString()
         {
             return $"Name: {_name} City: {_city} State: {_state}";
