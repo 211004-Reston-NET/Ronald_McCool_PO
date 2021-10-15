@@ -1,50 +1,12 @@
 [
   {
-    "Name": null,
-    "Address": null,
-    "Phone": null,
-    "Orders": null
+    "Name": "Widget",
+    "Price": 300.59,
+    "Description": " just a plain-0-gissmo"
   },
   {
-    "Name": null,
-    "Address": null,
-    "Phone": null,
-    "Orders": null
-  },
-  {
-    "Name": null,
-    "Address": null,
-    "Phone": null,
-    "Orders": null
-  },
-  {
-    "Name": null,
-    "Address": null,
-    "Phone": null,
-    "Orders": null
-  },
-  {
-    "Name": null,
-    "Address": null,
-    "Phone": null,
-    "Orders": null
-  },
-  {
-    "Name": null,
-    "Address": null,
-    "Phone": null,
-    "Orders": null
-  },
-  {
-    "Name": null,
-    "Address": null,
-    "Phone": null,
-    "Orders": null
-  },
-  {
-    "Name": "John Doe",
-    "Address": "111 Doe st",
-    "Phone": "915-344-5523",
-    "Orders": null
+    "Name": "Wadget",
+    "Price": 550.59,
+    "Description": "Not a gissmo, but a wissmo"
   }
 ]

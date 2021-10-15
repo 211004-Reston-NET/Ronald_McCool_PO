@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace UI
 {
@@ -16,7 +13,8 @@ namespace UI
             Console.WriteLine("[2] Order");
             Console.WriteLine("[3] Inventory");
             Console.WriteLine("[4] Main Menu");
-            Console.WriteLine("[5] Exit");
+            Console.WriteLine("[5] ShowProduct");
+            Console.WriteLine("[6] Exit");
         }
 
 
@@ -37,6 +35,8 @@ namespace UI
                 case "4":
                     return MenuType.MainMenu;
                 case "5":
+                    return MenuType.ShowProduct;
+                 case "6":
                     return MenuType.Exit;
                 default:
                     Console.WriteLine("You have to enter a choice");

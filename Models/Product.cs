@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Models
 {
     public class Product
@@ -14,6 +9,9 @@ namespace Models
         public Product() { }
         public Product(string name,double price,string description)
         {
+            _name=name;
+            _price=price;
+            _description=description;
 
         }
         public string  Name { get; set; }

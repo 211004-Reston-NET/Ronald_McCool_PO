@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Models
 {
@@ -14,10 +11,19 @@ namespace Models
         public Order() { }
         public Order(List<LineItem> lineItems, string storeLocation, double price)
         {
-
+            _lineItem=lineItems;
+            _storeLocation=storeLocation;
+            _price=price;
         }
         public List<LineItem> LineItems { get; set; }
         public string StoreLocation { get; set; }
         public double Price { get; set; }
+        public List<LineItem> GetAllLineItems(){
+            return _lineItem;
+        }
+        public override string ToString()
+        {
+            return $"LineItems {_lineItem} StoreLocation {_storeLocation} Price {_price}";
+        }
     }
 }
