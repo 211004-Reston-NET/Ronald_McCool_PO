@@ -4,7 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 namespace RRDL
 {
-    public class Repository
+    public class Repository:IRepository
     {
         //referene from startup proj RRUI pick up folder and drill into the RRDL
         private const string _filePath="./../RRDL/Database/Product_Data.json";

@@ -7,19 +7,19 @@ namespace UI
 {
     public class ShowProduct:IMenu
     {
-        private ProductBL _restBL;
+        private IProductBL _restBL;
         //we are defining the dependecies this class needs to operate
         //we do this it this way because we can easily switch out which implementation details we will be using
         //But later we will be able to switch our RRDL proj to point to an actual database in the cloud 
         // without touching anything else to have that implementation
       
-        public ShowProduct(ProductBL p_restBl){
+        public ShowProduct(IProductBL p_restBl){
             _restBL=p_restBl;
         }
         public void Menu()
         {
             System.Console.WriteLine("List of Products");
-            List<Product> listOfProduct=_restBL.GetAllProducts();
+            List<Product> listOfProduct=_restBL.GetAllProduct();
             foreach(Product prod in listOfProduct){
                 System.Console.WriteLine("==============================================================");
                 System.Console.WriteLine(prod);

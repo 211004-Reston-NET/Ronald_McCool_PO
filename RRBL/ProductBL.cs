@@ -3,13 +3,20 @@ using RRDL;
 using System.Collections.Generic;
 namespace RRBL
 {
-    public class ProductBL
+    //Handles alll the business logic for are store application
+    //They are in charge of further processing/sanitizing/further validatio 
+    //of dats. Any Logic
+    public class ProductBL:IProductBL
     {
-        private Repository _repo;
-        public ProductBL(Repository p_repo){
-            _repo=p_repo;
+        private IRepository _repo;
+        public ProductBL(IRepository p_repo){
+            _repo = p_repo;
         }
-        public List<Product> GetAllProducts(){
+        public Product AddProduct(Product p_prod){
+            return _repo.AddProduct(p_prod);
+        }
+        public List<Product> GetAllProduct(){
+          
             return _repo.GetAllProduct();
         }
     }

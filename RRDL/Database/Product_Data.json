@@ -8,5 +8,10 @@
     "Name": "Wadget",
     "Price": 550.59,
     "Description": "Not a gissmo, but a wissmo"
+  },
+  {
+    "Name":"Gadget",
+    "Price":1200.52,
+    "Description":"Not gissmo nor wissmo, but a gassmo"
   }
 ]
