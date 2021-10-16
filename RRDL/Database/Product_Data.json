@@ -10,8 +10,18 @@
     "Description": "Not a gissmo, but a wissmo"
   },
   {
-    "Name":"Gadget",
-    "Price":1200.52,
-    "Description":"Not gissmo nor wissmo, but a gassmo"
+    "Name": "Gadget",
+    "Price": 1200.52,
+    "Description": "Not gissmo nor wissmo, but a gassmo"
+  },
+  {
+    "Name": "Kite",
+    "Price": 4.99,
+    "Description": "Flys in the wind"
+  },
+  {
+    "Name": "NeckTie",
+    "Price": 21.33,
+    "Description": "Persian Silk"
   }
 ]

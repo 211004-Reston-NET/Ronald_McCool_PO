@@ -9,24 +9,7 @@ namespace UI
     {
         static void Main(string[] args)
         {
-           /* Console.WriteLine("Hello World! How are you");
-            //Serilization serilization=new Serilization();
-            //serilization.SerialMain();
-            Product p=new Product(){
-                Name= "Widget",
-                Price=300.00,
-                Description =" just a gismo"
-
-            };
-            Repository repository=new Repository();
-            repository.AddProduct(p);
-            List<Product> listP=repository.GetAllProduct();
-            foreach(Product prod in listP)
-            {
-                System.Console.WriteLine(prod);
-            }*/
-         
-           
+          
 
             IMenu page = new MainMenu();
             bool repeat = true;
@@ -54,7 +37,10 @@ namespace UI
                         break;
                     
                     case MenuType.ShowProduct:
-                        page=new ShowProduct(new ProductBL(new Repository()) );
+                        page=new ShowProduct(new ModelBL(new Repository()) );
+                        break;
+                    case MenuType.AddProduct:
+                        page=new AddProducts(new ModelBL(new Repository()));
                         break;
                     case MenuType.Exit:
                         Console.WriteLine("BYE");

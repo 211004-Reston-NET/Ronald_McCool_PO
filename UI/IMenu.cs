@@ -8,6 +8,7 @@ namespace UI
         OrderMenu,
         Inventory,
         ShowProduct,
+        AddProduct,
         Exit
 
     }

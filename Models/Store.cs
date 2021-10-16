@@ -5,10 +5,10 @@ namespace Models
     {
         private string _name;
         private string _address;
-        private List<Product> _products;
+        private List<Customer> _products;
         private List<Order> _orders;
         public Store() { }
-        public Store(string name, string address, List<Product> products, List<Order> orders)
+        public Store(string name, string address, List<Customer> products, List<Order> orders)
         {
             _name=name;
             _address=address;
@@ -17,9 +17,9 @@ namespace Models
         }
         public string Name { get; set; }
         public string Address { get; set; }
-        public List<Product> Products { get; set; }
+        public List<Customer> Products { get; set; }
         public List<Order> Orders { get; set;}
-        public List<Product> GetAllProduct(){
+        public List<Customer> GetAllProduct(){
             return _products;
         }
         public List<Order> GetAllOrders(){
