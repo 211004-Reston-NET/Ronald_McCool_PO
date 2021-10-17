@@ -31,8 +31,6 @@ namespace UI
                 case "2":
                     return MenuType.OrderMenu;
                 case "3":
-                    return MenuType.Inventory;
-                case "4":
                     return MenuType.MainMenu;
                 case "5":
                     return MenuType.ShowProduct;
