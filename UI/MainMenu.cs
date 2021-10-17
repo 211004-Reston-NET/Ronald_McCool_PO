@@ -9,12 +9,10 @@ namespace UI
             Console.WriteLine("Welcome to MainMenu");
             Console.WriteLine("What do you do?");
             Console.WriteLine("[0] Store Front");
-            Console.WriteLine("[1] Customer");
-            Console.WriteLine("[2] Order");
-            Console.WriteLine("[3] Inventory");
-            Console.WriteLine("[4] Main Menu");
-            Console.WriteLine("[5] ShowProduct");
-            Console.WriteLine("[6] Exit");
+            Console.WriteLine("[1] Customer Menu");
+            Console.WriteLine("[2] Product Menu");
+            Console.WriteLine("[3] Main Menu");
+            Console.WriteLine("[4] Exit");
         }
 
 
@@ -29,16 +27,15 @@ namespace UI
                 case "1":
                     return MenuType.CustomerMenu;
                 case "2":
-                    return MenuType.OrderMenu;
+                    return MenuType.ProductMenu;
                 case "3":
                     return MenuType.MainMenu;
-                case "5":
-                    return MenuType.ShowProduct;
-                 case "6":
+                 case "4":
                     return MenuType.Exit;
                 default:
                     Console.WriteLine("You have to enter a choice");
                     return MenuType.MainMenu;
+                    break;
             }
         }
     }

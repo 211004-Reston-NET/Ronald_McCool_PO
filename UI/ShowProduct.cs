@@ -16,37 +16,39 @@ namespace UI
         public ShowProduct(IModelBL p_restBl){
             _restBL=p_restBl;
         }
+        
         public void Menu()
         {
-            System.Console.WriteLine("List of Products");
-            List<Product> listOfProduct=_restBL.GetAllProduct(); 
-            foreach(Product prod in listOfProduct){
-                System.Console.WriteLine("==============================================================");
-                System.Console.WriteLine(prod);
-                System.Console.WriteLine("==============================================================");
-            }
+            ListTheProducts();
             System.Console.WriteLine("[0] Main Menu");
-            System.Console.WriteLine("[1] Show Product");
-            System.Console.WriteLine("[2] Add Product");
-            System.Console.WriteLine("[3] Exit");
+            System.Console.WriteLine("[1] Show Product Again");
+            System.Console.WriteLine("[2] Exit");
         }
-
+        
         public MenuType YourCoice()
         {
              string userChoice = Console.ReadLine();
             switch (userChoice)
             {
                 case "0":
-                    return MenuType.StoreMenu;      
+                    return MenuType.MainMenu;      
                 case "1":
+                    ListTheProducts();
                     return MenuType.ShowProduct;
-                    case "2":
-                    return MenuType.AddProduct;
-                case "3":
+                case "2":
                     return MenuType.Exit;
                 default:
                     Console.WriteLine("You have to enter a choice");
                     return MenuType.MainMenu;
+            }
+        }
+         public void ListTheProducts(){
+             System.Console.WriteLine("List of Products");
+            List<Product> listOfProduct=_restBL.GetAllProduct(); 
+            foreach(Product prod in listOfProduct){
+                System.Console.WriteLine("==============================================================");
+                System.Console.WriteLine(prod);
+                System.Console.WriteLine("==============================================================");
             }
         }
 

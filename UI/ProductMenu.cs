@@ -1,15 +1,14 @@
 using System;
-
 namespace UI
 {
-    public class CustomerMenu:IMenu
+    public class ProductMenu:IMenu
     {
-         public void Menu()
+          public void Menu()
         {
-            Console.WriteLine("Welcome to customer Menu");
+            Console.WriteLine("Welcome to Product Menu");
             Console.WriteLine("What do you do?");
             Console.WriteLine("[1] Main Menu");
-            Console.WriteLine("[2] Show Customer");
+            Console.WriteLine("[2] Show Product");
             Console.WriteLine("[3] Add Customer");
             Console.WriteLine("[0] Exit");
 
@@ -23,9 +22,9 @@ namespace UI
                 case "1":
                     return MenuType.MainMenu;
                 case "2":
-                    return MenuType.ShowCustomer;
+                    return MenuType.ShowProduct;
                 case "3":
-                    return MenuType.AddCustomer;
+                    return MenuType.AddProduct;
                 case "0":
                     return MenuType.Exit;
                 default:

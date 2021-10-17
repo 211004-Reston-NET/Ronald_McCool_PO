@@ -30,9 +30,11 @@ namespace UI
             string choice=Console.ReadLine();
             switch(choice){
                 case "4":
+                Console.WriteLine("Enter Product name");
                _prod.Name= Console.ReadLine();
                 return MenuType.AddProduct;
                 case "3":
+                Console.WriteLine("Enter product price");
                 _prod.Price=Double.Parse(Console.ReadLine());
                 return MenuType.AddProduct;
                 case "2":

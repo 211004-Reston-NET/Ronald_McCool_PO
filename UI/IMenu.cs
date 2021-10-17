@@ -6,9 +6,11 @@ namespace UI
         StoreMenu,
         CustomerMenu,
         OrderMenu,
-        Inventory,
+        ProductMenu,
         ShowProduct,
         AddProduct,
+        AddCustomer,
+        ShowCustomer,
         Exit
 
     }
