@@ -44,6 +44,12 @@ namespace UI
                     case MenuType.AddCustomer:
                         page=new AddCustomer(new ModelBL(new Repository()));
                         break;
+                    case MenuType.AddStore:
+                        page=new AddStore(new ModelBL(new Repository()));
+                        break;
+                    case MenuType.ShowStore:
+                        page=new ShowStore(new ModelBL(new Repository()));
+                        break;
                     case MenuType.Exit:
                         Console.WriteLine("BYE");
                         repeat = false;

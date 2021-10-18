@@ -11,6 +11,8 @@ namespace UI
         AddProduct,
         AddCustomer,
         ShowCustomer,
+        AddStore,
+        ShowStore,
         Exit
 
     }

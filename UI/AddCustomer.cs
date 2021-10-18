@@ -19,7 +19,7 @@ namespace UI
           Console.WriteLine("[1] Add Customer");
           Console.WriteLine("[0] Go back to show products");
          }
-          public MenuType YourCoice()
+        public MenuType YourCoice()
         {
             string choice=Console.ReadLine();
             switch(choice){

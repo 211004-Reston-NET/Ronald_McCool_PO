@@ -27,7 +27,7 @@ namespace Models
         }
         public override string ToString()
         {
-            return $"Name {_name} Address {_address} Product {_products} Oorder {_orders}";
+            return $"Name {Name}\nAddress {Address}";
         }
     }
 }

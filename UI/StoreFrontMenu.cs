@@ -10,6 +10,8 @@ namespace UI
             Console.WriteLine("What do you do?");
             
             Console.WriteLine("[1] Main Menu");
+            Console.WriteLine("[2] Add Store");
+            Console.WriteLine("[3] Show Store");
             Console.WriteLine("[0] Exit");
 
         }
@@ -22,6 +24,10 @@ namespace UI
                
                 case "1":
                     return MenuType.MainMenu;
+                case "2":
+                    return MenuType.AddStore;
+                case "3":
+                    return MenuType.ShowStore;
                 case "0":
                     return MenuType.Exit;
                 default:
