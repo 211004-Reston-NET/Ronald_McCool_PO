@@ -33,5 +33,10 @@
     "Name": "Fudge Cycle",
     "Price": 1.99,
     "Description": "Melting fudge ice cream"
+  },
+  {
+    "Name": "Hamburger",
+    "Price": 2.99,
+    "Description": "Extra pickles Extra onions"
   }
 ]

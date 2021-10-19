@@ -33,5 +33,15 @@
     "Name": "Hal Vale",
     "Address": "555 nowhere st.",
     "Phone": "(909)888-3322"
+  },
+  {
+    "Name": "Sammy Hagar",
+    "Address": "2323 rock-n-roll",
+    "Phone": "999-000-0000"
+  },
+  {
+    "Name": "Quincy Adams",
+    "Address": "1200 Whashington st.",
+    "Phone": "555-5555"
   }
 ]

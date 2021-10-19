@@ -22,7 +22,7 @@ namespace UI
             ListTheProducts();
             System.Console.WriteLine("[0] Main Menu");
             System.Console.WriteLine("[1] Show Product Again");
-            System.Console.WriteLine("[2] Exit");
+            System.Console.WriteLine("[2] Product Menu");
         }
         
         public MenuType YourCoice()
@@ -36,7 +36,7 @@ namespace UI
                     ListTheProducts();
                     return MenuType.ShowProduct;
                 case "2":
-                    return MenuType.Exit;
+                    return MenuType.ProductMenu;
                 default:
                     Console.WriteLine("You have to enter a choice");
                     return MenuType.MainMenu;

@@ -15,6 +15,14 @@ namespace RRBL
         List<LineItem> GetAllLineItem();
         List<Order> GetAllOrder();
         List<Store> GetAllStore();
+
+        
+
+        //Search for individual store
+        List<Store> GetStore(string p_name);
+
+
+
         //Add Product to the database
         //p_prod is the product we are adding
         //It twill rturn the (Product) p_prod 

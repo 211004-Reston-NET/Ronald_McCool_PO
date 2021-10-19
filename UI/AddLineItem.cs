@@ -19,6 +19,7 @@ namespace UI
             Console.WriteLine("[1} Enter Product");
             Console.WriteLine("[2] Enter Quntity");
             Console.WriteLine("[3] Add LineItem");
+            Console.WriteLine("[4] LineItem Menu");
             
         }
 
@@ -45,6 +46,8 @@ namespace UI
                 case "3":
                       _modBL.AddModel(_lineItem);
                       return MenuType.AddLineItem;
+                case "4":
+                     return MenuType.LineItemMenu;
                 default:
                       Console.WriteLine("What I don't understand re-select");
                       return MenuType.AddLineItem;

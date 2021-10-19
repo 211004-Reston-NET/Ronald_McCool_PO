@@ -1,0 +1,17 @@
+[
+  {
+    "LineItems": null,
+    "StoreLocation": "texas",
+    "Price": 89.9
+  },
+  {
+    "LineItems": null,
+    "StoreLocation": "Alabama",
+    "Price": 36.36
+  },
+  {
+    "LineItems": null,
+    "StoreLocation": "Michighan",
+    "Price": 502.2
+  }
+]

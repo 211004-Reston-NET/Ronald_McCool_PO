@@ -14,8 +14,11 @@ namespace UI
         ShowCustomer,
         AddStore,
         ShowStore,
+        CurrentStore,
         AddLineItem,
         ShowLineItem,
+        AddOrder,
+        ShowOrder,
         Exit
 
     }

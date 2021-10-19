@@ -7,6 +7,7 @@ namespace UI
     public class ShowStore:IMenu
     {
           private IModelBL _storeBL;
+          public static string _findStoreName;
         //we are defining the dependecies this class needs to operate
         //we do this it this way because we can easily switch out which implementation details we will be using
         //But later we will be able to switch our RRDL proj to point to an actual database in the cloud 
@@ -19,9 +20,10 @@ namespace UI
         public void Menu()
         {
             ListTheStores();
-            System.Console.WriteLine("[0] Main Menu");
-            System.Console.WriteLine("[1] Show Store Again");
-            System.Console.WriteLine("[2] Exit");
+            Console.WriteLine("[0] Main Menu");
+            Console.WriteLine("[1] Show Store Again");
+            Console.WriteLine("[2] Search for Store");
+            Console.WriteLine("[3] Exit");
         }
         
         public MenuType YourCoice()
@@ -35,6 +37,10 @@ namespace UI
                     ListTheStores();
                     return MenuType.ShowStore;
                 case "2":
+                    Console.WriteLine("Enter store you want to locate");
+                    _findStoreName=Console.ReadLine();
+                    return MenuType.CurrentStore;
+                case "3":
                     return MenuType.Exit;
                 default:
                     Console.WriteLine("You have to enter a choice");

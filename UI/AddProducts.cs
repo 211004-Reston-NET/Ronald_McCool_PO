@@ -17,11 +17,12 @@ namespace UI
 
       public void Menu(){
           Console.WriteLine("Add product Menu");
+          Console.WriteLine("[5] Main Menu");
           Console.WriteLine("[4] Enter product name");
           Console.WriteLine("[3] Enter product price");
           Console.WriteLine("[2] Enter product description");
           Console.WriteLine("[1] Add product");
-          Console.WriteLine("[0] Go back to show products");
+          Console.WriteLine("[0] Go back to Product Menu");
       }
    
 
@@ -29,6 +30,8 @@ namespace UI
         {
             string choice=Console.ReadLine();
             switch(choice){
+                case "5":
+                return MenuType.MainMenu;
                 case "4":
                 Console.WriteLine("Enter Product name");
                _prod.Name= Console.ReadLine();
@@ -45,7 +48,7 @@ namespace UI
                 _modBL.AddModel(_prod);
                 return MenuType.AddProduct;
                 case "0":
-                return MenuType.ShowProduct;
+                return MenuType.ProductMenu;
                 default:
                 Console.WriteLine("What I don't understand. Try again!!");
                 return MenuType.AddProduct;

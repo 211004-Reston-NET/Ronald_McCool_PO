@@ -15,7 +15,7 @@ namespace UI
            
             ListTheLineItems();
             System.Console.WriteLine("[1] Show Customer Again");
-            System.Console.WriteLine("[2] Go Back");
+            System.Console.WriteLine("[2] Go Back Line Item Menu");
         }
         public  MenuType YourCoice(){
              string userChoice = Console.ReadLine();
@@ -26,7 +26,7 @@ namespace UI
                      ListTheLineItems();
                     return MenuType.ShowLineItem;
                 case "2":
-                    return MenuType.MainMenu;
+                    return MenuType.LineItemMenu;
                 default:
                     Console.WriteLine("You have to enter a choice");
                     return MenuType.MainMenu;

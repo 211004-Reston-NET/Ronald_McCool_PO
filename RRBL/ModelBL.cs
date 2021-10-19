@@ -1,6 +1,7 @@
 ﻿using Models;
 using RRDL;
 using System.Collections.Generic;
+using System.Linq;
 namespace RRBL
 {
     //Handles alll the business logic for are store application
@@ -43,6 +44,13 @@ namespace RRBL
         }
         public List<Store> GetAllStore(){
             return _repo.GetAllStore();
+        }
+
+
+        //Search for individual store
+        public List<Store> GetStore(string p_name){
+            List<Store> listOfStore =_repo.GetAllStore();
+            return listOfStore.Where(stor => stor.Name.Contains(p_name)).ToList();
         }
     }
 }

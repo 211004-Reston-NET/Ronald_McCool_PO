@@ -9,6 +9,8 @@ namespace UI
             Console.WriteLine("Welcome to Order Menu");
             Console.WriteLine("What do you do?");
             Console.WriteLine("[1] Main Menu");
+            Console.WriteLine("{2} Add Order");
+            Console.WriteLine("[3] Show Order");
             Console.WriteLine("[0] Exit");
 
         }
@@ -21,8 +23,10 @@ namespace UI
                 
                 case "1":
                     return MenuType.MainMenu;
-                case "0":
-                    return MenuType.Exit;
+                case "2":
+                     return MenuType.AddOrder;
+                case "3":
+                      return MenuType.ShowOrder;
                 default:
                     Console.WriteLine("You have to enter a choice");
                     return MenuType.MainMenu;

@@ -35,6 +35,9 @@ namespace UI
                     case MenuType.LineItemMenu:
                         page=new LineItemMenu();
                         break;
+                    case MenuType.OrderMenu:
+                        page=new OrderMenu();
+                        break;
                     case MenuType.ShowProduct:
                         page=new ShowProduct(new ModelBL(new Repository()) );
                         break;
@@ -53,11 +56,20 @@ namespace UI
                     case MenuType.ShowStore:
                         page=new ShowStore(new ModelBL(new Repository()));
                         break;
+                    case MenuType.CurrentStore:
+                        page=new CurrentStore(new ModelBL(new Repository()));
+                        break;
                     case MenuType.AddLineItem:
                         page=new AddLineItem(new ModelBL(new Repository()));
                         break;
                     case MenuType.ShowLineItem:
                         page= new ShowLineItems(new ModelBL(new Repository()));
+                        break;
+                    case MenuType.ShowOrder:
+                        page=new ShowOrder(new ModelBL(new Repository()));
+                        break;
+                        case MenuType.AddOrder:
+                        page= new AddOrder(new ModelBL(new Repository()));
                         break;
                     case MenuType.Exit:
                         Console.WriteLine("BYE");

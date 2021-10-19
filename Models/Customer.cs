@@ -25,7 +25,7 @@ namespace Models
       
         public override string ToString()
         {
-            return $"Name {Name}\nAddress {Address}\nPhone {Phone}";
+            return $"Name {Name}\nAddress{Address}\nPhone {Phone}";
         }
     }
 }

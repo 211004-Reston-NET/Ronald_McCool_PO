@@ -14,7 +14,7 @@ namespace UI
            
             ListTheCustomers();
             System.Console.WriteLine("[1] Show Customer Again");
-            System.Console.WriteLine("[2] Go Back");
+            System.Console.WriteLine("[2] Go Back Customer Menu");
         }
         public  MenuType YourCoice(){
              string userChoice = Console.ReadLine();
@@ -25,7 +25,7 @@ namespace UI
                      ListTheCustomers();
                     return MenuType.ShowCustomer;
                 case "2":
-                    return MenuType.MainMenu;
+                    return MenuType.CustomerMenu;
                 default:
                     Console.WriteLine("You have to enter a choice");
                     return MenuType.MainMenu;

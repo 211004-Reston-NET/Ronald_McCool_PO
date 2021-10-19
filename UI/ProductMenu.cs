@@ -9,7 +9,7 @@ namespace UI
             Console.WriteLine("What do you do?");
             Console.WriteLine("[1] Main Menu");
             Console.WriteLine("[2] Show Product");
-            Console.WriteLine("[3] Add Customer");
+            Console.WriteLine("[3] Add Product");
             Console.WriteLine("[0] Exit");
 
         }
