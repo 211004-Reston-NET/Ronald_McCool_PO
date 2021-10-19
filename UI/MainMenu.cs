@@ -7,13 +7,15 @@ namespace UI
         public void Menu()
         {
             Console.WriteLine("Welcome to MainMenu");
-            Console.WriteLine("What do you do?");
-            Console.WriteLine("[0] Store Front");
+            Console.WriteLine("What's your choice?");
+            Console.WriteLine("[0] Main Menu");
             Console.WriteLine("[1] Customer Menu");
             Console.WriteLine("[2] Product Menu");
             Console.WriteLine("[3] Store Menu");
-            Console.WriteLine("[4] Main Menu");
-            Console.WriteLine("[5] Exit");
+            Console.WriteLine("[4] LineItem Menu");
+            Console.WriteLine("[5] Order Menu");
+            Console.WriteLine("[6] Exit");
+            
         }
 
 
@@ -24,7 +26,7 @@ namespace UI
             switch (userChoice)
             {
                 case "0":
-                    return MenuType.StoreMenu;
+                    return MenuType.MainMenu;
                 case "1":
                     return MenuType.CustomerMenu;
                 case "2":
@@ -32,8 +34,10 @@ namespace UI
                 case "3":
                     return MenuType.StoreMenu;
                 case "4":
-                    return MenuType.MainMenu;
-                 case "5":
+                    return MenuType.LineItemMenu;
+                case "5":
+                    return MenuType.OrderMenu;
+                case "6":
                     return MenuType.Exit;
                 default:
                     Console.WriteLine("You have to enter a choice");

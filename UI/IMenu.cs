@@ -7,12 +7,15 @@ namespace UI
         CustomerMenu,
         OrderMenu,
         ProductMenu,
+        LineItemMenu,
         ShowProduct,
         AddProduct,
         AddCustomer,
         ShowCustomer,
         AddStore,
         ShowStore,
+        AddLineItem,
+        ShowLineItem,
         Exit
 
     }

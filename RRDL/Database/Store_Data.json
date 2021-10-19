@@ -4,5 +4,17 @@
     "Address": "123 San Antonio",
     "Products": null,
     "Orders": null
+  },
+  {
+    "Name": "HEB",
+    "Address": "890 Eckert Rd.",
+    "Products": null,
+    "Orders": null
+  },
+  {
+    "Name": "Joskes",
+    "Address": "44 Marks st.",
+    "Products": null,
+    "Orders": null
   }
 ]
