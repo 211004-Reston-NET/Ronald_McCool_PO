@@ -1,7 +1,9 @@
 ﻿using Models;
 using RRDL;
+
 using System.Collections.Generic;
 using System.Linq;
+using System;
 namespace RRBL
 {
     //Handles alll the business logic for are store application
@@ -27,6 +29,9 @@ namespace RRBL
             return _repo.AddModel(p_mod);
         }
          public Store AddModel(Store p_mod){
+          if(p_mod.Name == null){
+              throw new Exception("You must enter a name for resteraunt");
+          }
             return _repo.AddModel(p_mod);
         }
         public List<Product> GetAllProduct(){
@@ -47,10 +52,24 @@ namespace RRBL
         }
 
 
-        //Search for individual store
+        //Search for individual Store
         public List<Store> GetStore(string p_name){
             List<Store> listOfStore =_repo.GetAllStore();
             return listOfStore.Where(stor => stor.Name.Contains(p_name)).ToList();
+        }
+
+        //Search for individual Customer
+        public List<Customer> GetCust(string p_name)
+        {
+            List<Customer> ListOfCust =_repo.GetAllCustomer();
+            return ListOfCust.Where(cust => cust.Name.Contains(p_name)).ToList();
+        }
+
+        //Search for individual Product
+        public List<Product> GetProd(string p_name)
+        {
+            List<Product> ListOfProd =_repo.GetAllProduct();
+            return ListOfProd.Where(prod => prod.Name.Contains(p_name)).ToList();
         }
     }
 }

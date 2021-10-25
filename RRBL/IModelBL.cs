@@ -21,6 +21,12 @@ namespace RRBL
         //Search for individual store
         List<Store> GetStore(string p_name);
 
+        //Search for individual customer
+        List<Customer> GetCust(string p_custName);
+
+        //search for individual Product
+        List<Product> GetProd(string p_product);
+
 
 
         //Add Product to the database

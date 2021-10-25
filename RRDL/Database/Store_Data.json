@@ -1,19 +1,31 @@
 [
   {
     "Name": "Joskes",
-    "Address": "123 San Antonio",
+    "Address": "8730 E.Houston San Antonio, TX 78210",
     "Products": null,
     "Orders": null
   },
   {
-    "Name": "HEB",
-    "Address": "890 Eckert Rd.",
+    "Name": "Big Lots",
+    "Address": "123 Colony",
     "Products": null,
     "Orders": null
   },
   {
-    "Name": "Joskes",
-    "Address": "44 Marks st.",
+    "Name": "kmart",
+    "Address": "444 gibs",
+    "Products": null,
+    "Orders": null
+  },
+  {
+    "Name": "Dollar General",
+    "Address": "6320 Babcock Rd.",
+    "Products": null,
+    "Orders": null
+  },
+  {
+    "Name": "Khols",
+    "Address": "333 Desert  Blvd.",
     "Products": null,
     "Orders": null
   }

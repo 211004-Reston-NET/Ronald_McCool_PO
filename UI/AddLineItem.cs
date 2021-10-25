@@ -30,18 +30,22 @@ namespace UI
                 case "0":
                     return MenuType.MainMenu;
                 case "1":
-                     /*Product product=new Product();
+                     Product product=new Product();
                      Console.WriteLine("Enter product name");
                      product.Name=Console.ReadLine();
                      Console.WriteLine("Enter product price");
                      product.Price=double.Parse(Console.ReadLine());
                      Console.WriteLine("Enter product description");
-                     product.Description=Console.ReadLine();*/
-                     _lineItem.Products=null;
+                     product.Description=Console.ReadLine();
+                     _lineItem.Products=product.ToString();
                     return MenuType.AddLineItem;
                 case "2":
                      Console.WriteLine("Enter LineItem Quantity");
+                     try{
                      _lineItem.Quantity=int.Parse(Console.ReadLine());
+                     }catch(FormatException ){
+                         Console.WriteLine("Invalid input");
+                     }
                      return MenuType.AddLineItem;
                 case "3":
                       _modBL.AddModel(_lineItem);

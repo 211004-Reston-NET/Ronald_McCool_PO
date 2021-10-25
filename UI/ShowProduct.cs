@@ -12,7 +12,7 @@ namespace UI
         //we do this it this way because we can easily switch out which implementation details we will be using
         //But later we will be able to switch our RRDL proj to point to an actual database in the cloud 
         // without touching anything else to have that implementation
-      
+        public static string _findProdName;
         public ShowProduct(IModelBL p_restBl){
             _restBL=p_restBl;
         }
@@ -23,6 +23,7 @@ namespace UI
             System.Console.WriteLine("[0] Main Menu");
             System.Console.WriteLine("[1] Show Product Again");
             System.Console.WriteLine("[2] Product Menu");
+            System.Console.WriteLine("[3] Search Product");
         }
         
         public MenuType YourCoice()
@@ -37,6 +38,10 @@ namespace UI
                     return MenuType.ShowProduct;
                 case "2":
                     return MenuType.ProductMenu;
+                case "3":
+                      System.Console.WriteLine("Enter product search");
+                      _findProdName=Console.ReadLine();
+                      return MenuType.CurrentProduct;
                 default:
                     Console.WriteLine("You have to enter a choice");
                     return MenuType.MainMenu;

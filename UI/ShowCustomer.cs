@@ -6,13 +6,22 @@ namespace UI
 {
     public class ShowCustomer:IMenu
     {
+
+        //IModelBL object used to achieve dependency injection uses abstraction that 
+        //are implemented in ModelBL where a the RRDL uses it own dependency injection to access the DB 
         private IModelBL _cust;
+
+        //static string var to pass to CurrentCustomer
+
+
+        public static string _findCustName;
         public ShowCustomer(IModelBL p_cust){
             _cust=p_cust;
         }
         public void Menu(){
            
             ListTheCustomers();
+            System.Console.WriteLine("[0] Search FOR Customer");
             System.Console.WriteLine("[1] Show Customer Again");
             System.Console.WriteLine("[2] Go Back Customer Menu");
         }
@@ -20,7 +29,10 @@ namespace UI
              string userChoice = Console.ReadLine();
             switch (userChoice)
             {
-                  
+                case "0":
+                    Console.WriteLine("Enter Customer you want to locate");
+                    _findCustName=Console.ReadLine();
+                    return MenuType.CurrentCustomer;
                 case "1":
                      ListTheCustomers();
                     return MenuType.ShowCustomer;

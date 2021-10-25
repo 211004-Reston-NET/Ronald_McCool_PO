@@ -15,7 +15,7 @@ namespace UI
         public void Menu()
         {
             List<Store> listOfStore =_curStoreBL.GetStore(ShowStore._findStoreName);
-            Console.WriteLine("ThEe search result");
+            Console.WriteLine("The search result");
             foreach(Store store in listOfStore){
                 Console.WriteLine("*******************************");
                 Console.WriteLine(store);

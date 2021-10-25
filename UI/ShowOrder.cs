@@ -13,18 +13,21 @@ namespace UI
         public void Menu(){
            
             ListTheOrders();
-            System.Console.WriteLine("[1] Show Order Again");
-            System.Console.WriteLine("[2] Go Back Order Menu");
+            Console.WriteLine("[2] Go back Main Menu");
+            Console.WriteLine("[1] Show Order Again");
+            Console.WriteLine("[0] Go Back Order Menu");
         }
         public  MenuType YourCoice(){
              string userChoice = Console.ReadLine();
             switch (userChoice)
             {
-                  
+
+                case "2":
+                    return MenuType.MainMenu;  
                 case "1":
                      ListTheOrders();
                     return MenuType.ShowOrder;
-                case "2":
+                case "0":
                     return MenuType.OrderMenu;
                 default:
                     Console.WriteLine("You have to enter a choice Main Menu");

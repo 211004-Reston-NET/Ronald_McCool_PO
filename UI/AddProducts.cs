@@ -38,7 +38,13 @@ namespace UI
                 return MenuType.AddProduct;
                 case "3":
                 Console.WriteLine("Enter product price");
+                try{
                 _prod.Price=Double.Parse(Console.ReadLine());
+                }
+                catch(Exception )
+                {
+                    Console.WriteLine("Please enter valid price");
+                }
                 return MenuType.AddProduct;
                 case "2":
                 Console.WriteLine("Enter product description");

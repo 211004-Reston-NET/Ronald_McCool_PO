@@ -20,10 +20,10 @@ namespace UI
         public void Menu()
         {
             ListTheStores();
-            Console.WriteLine("[0] Main Menu");
-            Console.WriteLine("[1] Show Store Again");
+            Console.WriteLine("[4] Main Menu");
+            Console.WriteLine("[3] Show Store Again");
             Console.WriteLine("[2] Search for Store");
-            Console.WriteLine("[3] Exit");
+            Console.WriteLine("[1] Go back to store menu");
         }
         
         public MenuType YourCoice()
@@ -31,17 +31,17 @@ namespace UI
              string userChoice = Console.ReadLine();
             switch (userChoice)
             {
-                case "0":
+                case "4":
                     return MenuType.MainMenu;      
-                case "1":
+                case "3":
                     ListTheStores();
                     return MenuType.ShowStore;
                 case "2":
                     Console.WriteLine("Enter store you want to locate");
                     _findStoreName=Console.ReadLine();
                     return MenuType.CurrentStore;
-                case "3":
-                    return MenuType.Exit;
+                case "1":
+                    return MenuType.StoreMenu;
                 default:
                     Console.WriteLine("You have to enter a choice");
                     return MenuType.MainMenu;

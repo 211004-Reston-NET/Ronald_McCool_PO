@@ -13,10 +13,11 @@ namespace UI
         }
          public void Menu(){
           Console.WriteLine("Add Customer Menu");
-          Console.WriteLine("[5] Main Menu");
-          Console.WriteLine("[4] Enter customer name");
-          Console.WriteLine("[3] Enter customer address");
-          Console.WriteLine("[2] Enter customer phone number");
+          Console.WriteLine("[6] Main Menu");
+          Console.WriteLine("[5] Enter customer name");
+          Console.WriteLine("[4] Enter customer address");
+          Console.WriteLine("[3] Enter customer phone number");
+          Console.WriteLine("[2] Enter order");
           Console.WriteLine("[1] Add Customer");
           Console.WriteLine("[0] Go back Customer Menu");
          }
@@ -24,19 +25,23 @@ namespace UI
         {
             string choice=Console.ReadLine();
             switch(choice){
-                case "5":
+                case "6":
                 return MenuType.MainMenu;
-                case "4":
+                case "5":
                 Console.WriteLine("Enter Customer name");
                _cust.Name= Console.ReadLine();
                 return MenuType.AddCustomer;
-                case "3":
+                case "4":
                 Console.WriteLine("Enter Customer Address");
                 _cust.Address=Console.ReadLine();
                 return MenuType.AddCustomer;
-                case "2":
+                case "3":
                 Console.WriteLine("Enter Customer Phone Number");
                 _cust.Phone=Console.ReadLine();
+                return MenuType.AddCustomer;
+                case "2":
+                Console.WriteLine("Enter Order");
+                _cust.Orders=null;
                 return MenuType.AddCustomer;
                 case "1":
                 _modBL.AddModel(_cust);

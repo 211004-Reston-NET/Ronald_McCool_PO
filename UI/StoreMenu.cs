@@ -2,7 +2,7 @@ using System;
 
 namespace UI
 {
-    public class StoreFrontMenu : IMenu
+    public class StoreMenu : IMenu
     {
         public void Menu()
         {
