@@ -34,10 +34,10 @@ namespace UI
                      Console.WriteLine("Enter product name");
                      product.Name=Console.ReadLine();
                      Console.WriteLine("Enter product price");
-                     product.Price=double.Parse(Console.ReadLine());
+                     product.ProdPrice=decimal.Parse(Console.ReadLine());
                      Console.WriteLine("Enter product description");
                      product.Description=Console.ReadLine();
-                     _lineItem.Products=product.ToString();
+                     _lineItem.Products=product;
                     return MenuType.AddLineItem;
                 case "2":
                      Console.WriteLine("Enter LineItem Quantity");

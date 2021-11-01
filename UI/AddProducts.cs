@@ -39,7 +39,7 @@ namespace UI
                 case "3":
                 Console.WriteLine("Enter product price");
                 try{
-                _prod.Price=Double.Parse(Console.ReadLine());
+                _prod.ProdPrice=decimal.Parse(Console.ReadLine());
                 }
                 catch(Exception )
                 {

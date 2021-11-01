@@ -79,6 +79,14 @@ namespace RRDL
              _jsonString=File.ReadAllText(_filePath+"Store_Data.json");
              return JsonSerializer.Deserialize<List<Store>>(_jsonString);
              }
+             public Customer GetCustomerById(int p_id){
+                   return null;
+             }
+             public Store GetStoreById(int p_id){
+                   return null;
+             }
+         
+         
 
        
 

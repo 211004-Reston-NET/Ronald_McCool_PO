@@ -46,7 +46,7 @@ namespace UI
                     return MenuType.AddStore;
                 case "3":
                      Console.WriteLine("Enter Products");
-                     _store.Products=null;
+                     _store.Orders=null;
                      return MenuType.AddStore;
                 case "2":
                       Console.WriteLine("Enter Order");

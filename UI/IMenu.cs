@@ -21,6 +21,8 @@ namespace UI
         ShowLineItem,
         AddOrder,
         ShowOrder,
+        ShowCustById,
+        ShowStoreById,
         Exit
 
     }

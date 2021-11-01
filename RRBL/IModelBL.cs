@@ -37,5 +37,7 @@ namespace RRBL
         LineItem AddModel(LineItem _mod);
         Order AddModel(Order _mod);
         Store AddModel(Store _mod);
+        Customer GetCustomerById(int p_id);
+         Store GetStoreById(int p_id);
     }
 }

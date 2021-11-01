@@ -19,11 +19,12 @@ namespace UI
         
         public void Menu()
         {
-            ListTheStores();
+           // ListTheStores();
             Console.WriteLine("[4] Main Menu");
-            Console.WriteLine("[3] Show Store Again");
+            Console.WriteLine("[3] List Stores");
             Console.WriteLine("[2] Search for Store");
-            Console.WriteLine("[1] Go back to store menu");
+            Console.WriteLine("[1] Search for Store By ID");
+            Console.WriteLine("[0] Go back to store menu");
         }
         
         public MenuType YourCoice()
@@ -41,6 +42,8 @@ namespace UI
                     _findStoreName=Console.ReadLine();
                     return MenuType.CurrentStore;
                 case "1":
+                    return MenuType.ShowStoreById;
+                case "0":
                     return MenuType.StoreMenu;
                 default:
                     Console.WriteLine("You have to enter a choice");
@@ -48,7 +51,7 @@ namespace UI
             }
         }
          public void ListTheStores(){
-             System.Console.WriteLine("List of Products");
+             System.Console.WriteLine("List of Stores");
             List<Store> listOfStores=_storeBL.GetAllStore(); 
             foreach(Store store in listOfStores){
                 System.Console.WriteLine("==============================================================");

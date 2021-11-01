@@ -71,5 +71,23 @@ namespace RRBL
             List<Product> ListOfProd =_repo.GetAllProduct();
             return ListOfProd.Where(prod => prod.Name.Contains(p_name)).ToList();
         }
+        public Customer GetCustomerById(int p_id)
+        {
+            Customer custFound =_repo.GetCustomerById(p_id);
+            if(custFound==null)
+            {
+                return null;
+            }
+            return custFound;
+        }
+        public Store GetStoreById(int p_id)
+        {
+            Store storeFound =_repo.GetStoreById(p_id);
+            if(storeFound==null)
+            {
+                return null;
+            }
+            return storeFound;
+        }
     }
 }

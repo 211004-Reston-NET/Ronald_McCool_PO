@@ -9,10 +9,16 @@ namespace RRDL
       //p_prod will be the Product added to the database
       //it will return the Product we are adding
         Product AddModel(Product _mod);
+        
         Customer AddModel(Customer _mod);
         LineItem AddModel(LineItem _mod);
         Order AddModel(Order _mod);
         Store AddModel(Store _mod);
+
+
+      Customer GetCustomerById(int p_id);
+      Store GetStoreById(int p_id);
+
         //This will return a list of Products stored in the database
         //Returns a list of Products
         List<Product> GetAllProduct();

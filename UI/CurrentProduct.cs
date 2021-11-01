@@ -22,7 +22,8 @@ namespace UI
                 Console.WriteLine(prod);
                 Console.WriteLine("********************************");
             }
-            Console.WriteLine("[0] Go back to Show Store");
+           
+            
         }
 
         public MenuType YourCoice()

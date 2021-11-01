@@ -14,14 +14,11 @@ namespace UI
         }
         public void Menu()
         {
-            List<Store> listOfStore =_curStoreBL.GetStore(ShowStore._findStoreName);
-            Console.WriteLine("The search result");
-            foreach(Store store in listOfStore){
-                Console.WriteLine("*******************************");
-                Console.WriteLine(store);
-                Console.WriteLine("********************************");
-            }
+          
+
             Console.WriteLine("[0] Go back to Show Store");
+            System.Console.WriteLine("[1] Search store");
+            //Console.ReadLine();
         }
 
         public MenuType YourCoice()
@@ -30,6 +27,16 @@ namespace UI
                 switch(choice){
                     case "0":
                         return MenuType.ShowStore;
+                    case "1":
+                            List<Store> listOfStore =_curStoreBL.GetStore(ShowStore._findStoreName);
+                            Console.WriteLine("The search result");
+                            foreach(Store store in listOfStore){
+                            Console.WriteLine("*******************************");
+                            Console.WriteLine(store);
+                                Console.WriteLine("********************************");
+                            }
+            
+                         return MenuType.ShowStore;
                     default:
                         Console.WriteLine("Hay enter o to go bak to the show store");
                         return MenuType.CurrentStore;

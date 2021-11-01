@@ -15,28 +15,32 @@ namespace UI
 
 
         public static string _findCustName;
+        
         public ShowCustomer(IModelBL p_cust){
             _cust=p_cust;
         }
         public void Menu(){
            
-            ListTheCustomers();
-            System.Console.WriteLine("[0] Search FOR Customer");
-            System.Console.WriteLine("[1] Show Customer Again");
-            System.Console.WriteLine("[2] Go Back Customer Menu");
+           // ListTheCustomers();
+            System.Console.WriteLine("[0] Search FOR Customer by name");
+            System.Console.WriteLine("[1] Search For Customer by ID");
+            System.Console.WriteLine("[2] List the Customers");
+            System.Console.WriteLine("[3] Go Back Customer Menu");
         }
         public  MenuType YourCoice(){
              string userChoice = Console.ReadLine();
             switch (userChoice)
             {
                 case "0":
-                    Console.WriteLine("Enter Customer you want to locate");
+                    Console.WriteLine("Enter Customer name you want to locate");
                     _findCustName=Console.ReadLine();
                     return MenuType.CurrentCustomer;
                 case "1":
+                    return MenuType.ShowCustById;
+                case "2":
                      ListTheCustomers();
                     return MenuType.ShowCustomer;
-                case "2":
+                case "3":
                     return MenuType.CustomerMenu;
                 default:
                     Console.WriteLine("You have to enter a choice");

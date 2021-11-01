@@ -34,7 +34,7 @@ namespace UI
                     return MenuType.AddOrder;
                 case "3":
                     Console.WriteLine("Enter store Location");
-                    _order.StoreLocation=Console.ReadLine();
+                    _order.Store=new Store();
                     return MenuType.AddOrder;
                 case "2":
                     Console.WriteLine("Enter Price");
