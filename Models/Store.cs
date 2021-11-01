@@ -24,9 +24,9 @@ namespace Models
             get{return _name;} 
             set
             {
-               // if (!Regex.IsMatch(value, @"^[A-Za-z .]+$")){
-                   // throw new System.Exception("Name cannot have numbers");
-               // }
+                if (!Regex.IsMatch(value, @"^[A-Za-z .]+$")){
+                    throw new System.Exception("Name cannot have numbers");
+                }
                 _name=value;
                 
             } 
