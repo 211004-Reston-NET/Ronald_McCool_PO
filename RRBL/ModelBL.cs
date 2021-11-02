@@ -85,6 +85,7 @@ namespace RRBL
             Store storeFound =_repo.GetStoreById(p_id);
             if(storeFound==null)
             {
+                //throw new Exception("Store not found");
                 return null;
             }
             return storeFound;

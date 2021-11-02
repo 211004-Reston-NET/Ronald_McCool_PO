@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using mod = Models;
 using Entity=RRDL.Entities;
+using Models;
 
 namespace RRDL{
     public class RepositoryDataBase : IRepository
@@ -59,7 +60,10 @@ namespace RRDL{
             _contex.Orders.Add(
                 new Entity.Order()
                 {
-                    OrderPrice=(decimal)_mod.Price
+                    OrderId=_mod.OrderId,
+                    OrderPrice=_mod.Price,
+                    StoreId=_mod.StoreId,
+                    CustId=_mod.CustId
                 }
             );
             _contex.SaveChanges();
@@ -91,7 +95,7 @@ namespace RRDL{
                     Address=cust.CustAddress,
                     Phone=cust.CustPhone,
                     Orders=cust.Orders.Select(ord=> new mod.Order(){
-                    Price=(double)ord.OrderPrice,
+                    Price=ord.OrderPrice,
                    // CustId=cust.CustId,
                     StoreId=(int)ord.StoreId
                     }).ToList()
@@ -113,16 +117,52 @@ namespace RRDL{
             ).ToList();
             
         }
-
-        public List<mod.Order> GetAllOrder()
-        {
-            return _contex.Orders.Select(order =>
+        public List<mod.Order> GetAllOrder(){
+             return _contex.Orders.Select(order =>
+           
                 new mod.Order()
                 {
-                    Price=(double)order.OrderPrice
+                    OrderId=order.OrderId,
+                    Price=order.OrderPrice,
+                    StoreId=order.StoreId,
+                    CustId=order.CustId
                 }
                 
             ).ToList();
+        }
+        public List<mod.Order> GetAllOrder(mod.Store p_store,mod.Customer p_cust)
+        {
+
+
+            var result=(from ord in _contex.Orders 
+            join store in _contex.Stores on ord.StoreId equals p_store.ID
+            join cust in _contex.Customers on ord.CustId equals p_cust.Id    select ord);
+        
+             List<mod.Order> orderList = new List<mod.Order>();
+             foreach(Entities.Order ord in result){
+                 orderList.Add(new mod.Order(){
+                     OrderId=ord.OrderId,
+                     StoreId=ord.StoreId,
+                     CustId=ord.CustId
+                 });
+             } 
+           /* return _contex.Orders.Select(order =>
+           
+                new mod.Order()
+                {
+                    OrderId=order.OrderId,
+                    Price=order.OrderPrice,
+                    StoreId=order.StoreId,
+                    CustId=order.CustId
+                }
+                
+            ).ToList();*/
+            return orderList;
+        }
+
+        public List<Order> getAllOrder(Store store, Customer cust)
+        {
+            throw new NotImplementedException();
         }
 
         public List<mod.Product> GetAllProduct()

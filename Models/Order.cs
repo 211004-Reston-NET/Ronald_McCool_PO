@@ -7,14 +7,14 @@ namespace Models
         private List<LineItem> _lineItem;
         private Store _store;
         private Order _order;
-        private double _price;
+        private decimal _price;
         private int _orderId;
 
         public Order() { }
         
         
         public int OrderId { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public int CustId { get; set; }
         public int StoreId { get; set; }
 

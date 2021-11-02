@@ -26,5 +26,6 @@ namespace RRDL
         List<LineItem> GetAllLineItem();
         List<Order> GetAllOrder();
         List<Store> GetAllStore();
+        List<Order> getAllOrder(Store store, Customer cust);
     }
 }

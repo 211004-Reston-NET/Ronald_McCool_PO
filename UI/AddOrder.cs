@@ -38,7 +38,7 @@ namespace UI
                     return MenuType.AddOrder;
                 case "2":
                     Console.WriteLine("Enter Price");
-                     _order.Price=double.Parse(Console.ReadLine());
+                     _order.Price=decimal.Parse(Console.ReadLine());
                      return MenuType.AddOrder;
                 case "1":
                     _modBL.AddModel(_order);

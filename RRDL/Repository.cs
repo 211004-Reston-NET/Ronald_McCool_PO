@@ -85,12 +85,13 @@ namespace RRDL
              public Store GetStoreById(int p_id){
                    return null;
              }
-         
-         
+             public List<Order> GetAllOrder(Store store, Customer customer){
+                   return null;
+             }
 
-       
-
-
-
+        public List<Order> getAllOrder(Store store, Customer cust)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
