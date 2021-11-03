@@ -160,9 +160,33 @@ namespace RRDL{
             return orderList;
         }
 
-        public List<Order> getAllOrder(Store store, Customer cust)
+        public List<Order> getAllOrder(mod.Store p_store,mod.Customer p_cust)
         {
-            throw new NotImplementedException();
+            //store in _contex.Stores on  cust in _contex.Customers on
+            
+            var result=(from ord in _contex.Orders 
+            where  ord.StoreId==p_store.ID 
+            where  ord.CustId==p_cust.Id    select ord);
+        
+             List<mod.Order> orderList = new List<mod.Order>();
+             foreach(Entities.Order ord in result){
+                 orderList.Add(new mod.Order(){
+                     OrderId=ord.OrderId,
+                     StoreId=ord.StoreId,
+                     CustId=ord.CustId,
+                     /*LineItems=(from li in _contex.Lineitems
+                      where li.OrderId==ord.OrderId
+                      select new mod.LineItem(){
+                          LineItemId=li.LineitemId,
+                          Quantity=li.LineitemQty,
+                          ProId=li.ProdId,
+                          OrdrId=li.OrderId
+                      }).ToList()*/
+                     
+                 });
+             } 
+            //throw new NotImplementedException();
+             return orderList;
         }
 
         public List<mod.Product> GetAllProduct()

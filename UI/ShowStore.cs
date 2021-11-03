@@ -40,7 +40,7 @@ namespace UI
                 case "2":
                     Console.WriteLine("Enter store you want to locate");
                     _findStoreName=Console.ReadLine();
-                    return MenuType.CurrentStore;
+                    return MenuType.ShowStore;
                 case "1":
                     return MenuType.ShowStoreById;
                 case "0":

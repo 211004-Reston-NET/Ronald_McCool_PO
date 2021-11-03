@@ -66,6 +66,8 @@ namespace UI{
                         return new ShowCustById(new ModelBL(new RepositoryDataBase(new qasvkiagContext(options))));
                     case MenuType.ShowStoreById:
                         return new ShowStoreById(new ModelBL(new RepositoryDataBase(new qasvkiagContext(options))));
+                   // case MenuType.PurchaseOreder:
+                      //  return new PurchaseOrder(new ModelBL(new RepositoryDataBase(new qasvkiagContext(options))));
                     default:
                         return null;
                       

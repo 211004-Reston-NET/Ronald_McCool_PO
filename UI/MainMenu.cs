@@ -15,6 +15,7 @@ namespace UI
             Console.WriteLine("[4] LineItem Menu");
             Console.WriteLine("[5] Order Menu");
             Console.WriteLine("[6] Exit");
+            Console.WriteLine("[7} Purchase Order");
             
         }
 
@@ -39,6 +40,8 @@ namespace UI
                     return MenuType.OrderMenu;
                 case "6":
                     return MenuType.Exit;
+                case "7":
+                    return MenuType.PurchaseOrder;
                 default:
                     Console.WriteLine("You have to enter a choice");
                     return MenuType.MainMenu;

@@ -51,7 +51,7 @@ namespace RRBL
             return _repo.GetAllStore();
         }
 
-
+     
         //Search for individual Store
         public List<Store> GetStore(string p_name){
             List<Store> listOfStore =_repo.GetAllStore();
@@ -89,6 +89,11 @@ namespace RRBL
                 return null;
             }
             return storeFound;
+        }
+
+        public List<Order> getAllOrder(Store s, Customer c)
+        {
+            return _repo.getAllOrder(s,c);
         }
     }
 }

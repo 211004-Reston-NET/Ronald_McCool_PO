@@ -19,11 +19,11 @@ namespace UI
         
         public void Menu()
         {
-            ListTheProducts();
+            //ListTheProducts();
             System.Console.WriteLine("[0] Main Menu");
-            System.Console.WriteLine("[1] Show Product Again");
+            System.Console.WriteLine("[1] List Products");
             System.Console.WriteLine("[2] Product Menu");
-            System.Console.WriteLine("[3] Search Product");
+           
         }
         
         public MenuType YourCoice()
@@ -38,10 +38,6 @@ namespace UI
                     return MenuType.ShowProduct;
                 case "2":
                     return MenuType.ProductMenu;
-                case "3":
-                      System.Console.WriteLine("Enter product search");
-                      _findProdName=Console.ReadLine();
-                      return MenuType.CurrentProduct;
                 default:
                     Console.WriteLine("You have to enter a choice");
                     return MenuType.MainMenu;
@@ -56,6 +52,7 @@ namespace UI
                 System.Console.WriteLine("==============================================================");
             }
         }
+         
 
         
     }

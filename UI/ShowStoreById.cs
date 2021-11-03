@@ -47,7 +47,7 @@ namespace UI
                     
                 return MenuType.ShowStoreById;
                 case "1":
-                return MenuType.ShowCustomer;
+                return MenuType.ShowStore;
                 default:
                 return MenuType.ShowCustById;
             }

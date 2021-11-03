@@ -16,7 +16,7 @@ namespace RRBL
         List<Order> GetAllOrder();
         List<Store> GetAllStore();
 
-        
+        List<Order> getAllOrder(Store store, Customer c);
 
         //Search for individual store
         List<Store> GetStore(string p_name);

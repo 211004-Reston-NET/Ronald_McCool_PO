@@ -23,6 +23,8 @@ namespace UI
         ShowOrder,
         ShowCustById,
         ShowStoreById,
+        PurchaseOrder,
+        
         Exit
 
     }

@@ -15,14 +15,9 @@ namespace UI
 
         public void Menu()
         {
-             List<Product> listOfProd =_curProdBL.GetProd(ShowProduct._findProdName);
-            Console.WriteLine("The search result");
-            foreach(Product prod in listOfProd){
-                Console.WriteLine("*******************************");
-                Console.WriteLine(prod);
-                Console.WriteLine("********************************");
-            }
-           
+         System.Console.WriteLine("Welcome to find product by ID");
+         System.Console.WriteLine("[1] Show Product BY id");
+         System.Console.WriteLine("[0] Show Product menu");
             
         }
 
@@ -31,11 +26,29 @@ namespace UI
              string choice=Console.ReadLine();
             switch(choice)
             {
+                case "1":
+                   ListProdById();
+                return MenuType.CurrentProduct;
                 case "0":
                 return MenuType.ShowProduct;
                 default:
                     System.Console.WriteLine("What did you enter");
                     return MenuType.CurrentProduct;
+            }
+        }
+        public void ListProdById(){
+            System.Console.WriteLine("Enter product ID to search");
+            int id=Int32.Parse(Console.ReadLine());
+            System.Console.WriteLine(id);
+            List<Product> byID =_curProdBL.GetAllProduct();
+            foreach(Product p in byID){
+                System.Console.WriteLine("hello");
+                //if(p.ProdId==id){
+                    Console.WriteLine("***********************");
+                    Console.WriteLine(p);
+                    Console.WriteLine("***********************");
+               // }
+
             }
         }
     }

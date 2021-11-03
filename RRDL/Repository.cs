@@ -91,7 +91,7 @@ namespace RRDL
 
         public List<Order> getAllOrder(Store store, Customer cust)
         {
-            throw new System.NotImplementedException();
+            return null;
         }
     }
 }
