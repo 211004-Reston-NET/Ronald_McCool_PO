@@ -36,12 +36,13 @@ namespace Models
             }  }
         public string Address { get; set; }
         public string Phone { get; set; }
+        public decimal moneytrackercust { get; set; }
         public List<Order> Orders { get; set; }
     
       
         public override string ToString()
         {
-            return $"CustId {Id}\nName {Name}\nAddress{Address}\nPhone {Phone}\nOrder List {Orders}";
+            return $"CustId {Id}\nName {Name}\nAddress{Address}\nPhone {Phone}\nMoney {moneytrackercust}";
         }
     }
 }

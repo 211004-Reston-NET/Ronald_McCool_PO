@@ -95,5 +95,14 @@ namespace RRBL
         {
             return _repo.getAllOrder(s,c);
         }
+        public Customer GetCust(int p_custId){
+            return _repo.GetCust(p_custId);
+
+        }
+
+        public Store GetStore(int p_storeId)
+        {
+            return _repo.GetStore(p_storeId);
+        }
     }
 }

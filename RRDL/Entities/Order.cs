@@ -9,7 +9,7 @@ namespace RRDL.Entities
     {
         public Order()
         {
-            Lineitems = new HashSet<Lineitem>();
+            OrdersLineitems = new HashSet<OrdersLineitem>();
         }
 
         public int OrderId { get; set; }
@@ -19,6 +19,6 @@ namespace RRDL.Entities
 
         public virtual Customer Cust { get; set; }
         public virtual Store Store { get; set; }
-        public virtual ICollection<Lineitem> Lineitems { get; set; }
+        public virtual ICollection<OrdersLineitem> OrdersLineitems { get; set; }
     }
 }

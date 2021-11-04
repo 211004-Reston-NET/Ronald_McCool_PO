@@ -29,17 +29,28 @@ namespace UI
             string choice = Console.ReadLine();
             switch(choice){
                 case "0":
-                Console.WriteLine("Enter how many you want");
-                try{
-                prod_qty=Int32.Parse(Console.ReadLine());
-                }catch(FormatException f){
-                    Console.WriteLine("Hay enter whole number quantity");
-                    return MenuType.PurchaseOrder;
+                System.Console.WriteLine("In the po class");
+                var listOfOrders=_porder.GetAllOrder();
+                  var listOfProd =_porder.GetAllProduct();
+                foreach(Order orders in listOfOrders){
+                    Store store=_porder.GetStore(orders.StoreId);
+                    
+                    Customer cust =_porder.GetCust(orders.CustId);
+                       
+                        foreach(LineItem l in orders.LineItems){
+                            if(store.inventory.Find(x=>x.LineItemId==l.LineItemId)!=null){
+                                if(store.inventory.Find(x=>x.LineItemId==l.LineItemId).Quantity > l.Quantity){
+                                    store.inventory.Find(x=>x.LineItemId==l.LineItemId).Quantity-=l.Quantity;
+                                    store.moneytracker +=l.ProId;
+                                    cust.moneytrackercust-=l.Quantity * listOfProd.Find(x=>x.ProdId==l.ProId).ProdPrice;
+                                    
+                                }
+                            }
+                        }
+                    
+
                 }
-                Console.WriteLine("Enter store ID");
-                findStore.ID=Int32.Parse(Console.ReadLine());
-                System.Console.WriteLine("Enter Customer ID");
-                findCust.Id=Int32.Parse(Console.ReadLine());
+               
                    List<Customer> custById =_porder.GetAllCustomer();
                    
                    foreach(Customer c in custById)

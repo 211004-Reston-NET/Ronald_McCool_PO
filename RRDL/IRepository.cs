@@ -27,5 +27,10 @@ namespace RRDL
         List<Order> GetAllOrder();
         List<Store> GetAllStore();
         List<Order> getAllOrder(Store store, Customer cust);
+
+
+        //GET STORE AND CUSTOMER ID
+         Customer GetCust(int p_custId);
+         Store GetStore(int p_storeId);
     }
 }

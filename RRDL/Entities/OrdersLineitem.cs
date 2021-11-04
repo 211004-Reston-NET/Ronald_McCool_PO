@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 namespace RRDL.Entities
 {
-    public partial class Inventory
+    public partial class OrdersLineitem
     {
-        public int InvenId { get; set; }
-        public int StoreId { get; set; }
+        public int OrderLineitem { get; set; }
+        public int OrderId { get; set; }
         public int LineitemId { get; set; }
 
         public virtual Lineitem Lineitem { get; set; }
-        public virtual Store Store { get; set; }
+        public virtual Order Order { get; set; }
     }
 }

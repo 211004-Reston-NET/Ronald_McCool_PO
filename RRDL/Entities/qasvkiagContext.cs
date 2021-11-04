@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-
 #nullable disable
 
 namespace RRDL.Entities
@@ -22,6 +21,7 @@ namespace RRDL.Entities
         public virtual DbSet<Inventory> Inventories { get; set; }
         public virtual DbSet<Lineitem> Lineitems { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrdersLineitem> OrdersLineitems { get; set; }
         public virtual DbSet<PgStatStatement> PgStatStatements { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Store> Stores { get; set; }
@@ -71,27 +71,32 @@ namespace RRDL.Entities
                 entity.Property(e => e.CustPhone)
                     .HasMaxLength(10)
                     .HasColumnName("cust_phone");
+
+                entity.Property(e => e.Moneytrackercust).HasColumnName("moneytrackercust");
             });
 
             modelBuilder.Entity<Inventory>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.InvenId)
+                    .HasName("inventory_pkey");
 
                 entity.ToTable("inventory");
 
-                entity.Property(e => e.ProdId).HasColumnName("prod_id");
+                entity.Property(e => e.InvenId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("inven_id");
 
-                entity.Property(e => e.ProdQty).HasColumnName("prod_qty");
+                entity.Property(e => e.LineitemId).HasColumnName("lineitem_id");
 
                 entity.Property(e => e.StoreId).HasColumnName("store_id");
 
-                entity.HasOne(d => d.Prod)
-                    .WithMany()
-                    .HasForeignKey(d => d.ProdId)
-                    .HasConstraintName("prod_id_fk");
+                entity.HasOne(d => d.Lineitem)
+                    .WithMany(p => p.Inventories)
+                    .HasForeignKey(d => d.LineitemId)
+                    .HasConstraintName("lineitem_id_fk");
 
                 entity.HasOne(d => d.Store)
-                    .WithMany()
+                    .WithMany(p => p.Inventories)
                     .HasForeignKey(d => d.StoreId)
                     .HasConstraintName("store_id_fk");
             });
@@ -107,11 +112,6 @@ namespace RRDL.Entities
                 entity.Property(e => e.OrderId).HasColumnName("order_id");
 
                 entity.Property(e => e.ProdId).HasColumnName("prod_id");
-
-                entity.HasOne(d => d.Order)
-                    .WithMany(p => p.Lineitems)
-                    .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("order_fk");
 
                 entity.HasOne(d => d.Prod)
                     .WithMany(p => p.Lineitems)
@@ -134,12 +134,40 @@ namespace RRDL.Entities
                 entity.HasOne(d => d.Cust)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("custid_fk");
 
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.StoreId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("store_fk");
+            });
+
+            modelBuilder.Entity<OrdersLineitem>(entity =>
+            {
+                entity.HasKey(e => e.OrderLineitem)
+                    .HasName("orders_lineitem_pkey");
+
+                entity.ToTable("orders_lineitem");
+
+                entity.Property(e => e.OrderLineitem)
+                    .ValueGeneratedNever()
+                    .HasColumnName("order_lineitem");
+
+                entity.Property(e => e.LineitemId).HasColumnName("lineitem_id");
+
+                entity.Property(e => e.OrderId).HasColumnName("order_id");
+
+                entity.HasOne(d => d.Lineitem)
+                    .WithMany(p => p.OrdersLineitems)
+                    .HasForeignKey(d => d.LineitemId)
+                    .HasConstraintName("lineitem_id_fk");
+
+                entity.HasOne(d => d.Order)
+                    .WithMany(p => p.OrdersLineitems)
+                    .HasForeignKey(d => d.OrderId)
+                    .HasConstraintName("order_id_fk");
             });
 
             modelBuilder.Entity<PgStatStatement>(entity =>
@@ -224,6 +252,8 @@ namespace RRDL.Entities
                 entity.ToTable("store");
 
                 entity.Property(e => e.StoreId).HasColumnName("store_id");
+
+                entity.Property(e => e.Moneytraker).HasColumnName("moneytraker");
 
                 entity.Property(e => e.StoreAddress)
                     .HasMaxLength(50)

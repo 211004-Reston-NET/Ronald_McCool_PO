@@ -28,6 +28,12 @@ namespace RRBL
         List<Product> GetProd(string p_product);
 
 
+        //get customer ID
+        Customer GetCust(int p_custId);
+
+        //get store ID
+        Store GetStore(int p_storeId);
+
 
         //Add Product to the database
         //p_prod is the product we are adding

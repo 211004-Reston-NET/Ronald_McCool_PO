@@ -93,5 +93,15 @@ namespace RRDL
         {
             return null;
         }
+
+        public Customer GetCust(int p_custId)
+        {
+            return GetAllCustomer().Find(id => id.Id==p_custId);
+        }
+
+        public Store GetStore(int p_storeId)
+        {
+             return GetAllStore().Find(id => id.ID==p_storeId);
+        }
     }
 }

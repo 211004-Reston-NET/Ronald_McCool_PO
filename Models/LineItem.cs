@@ -20,14 +20,14 @@ namespace Models
         public int LineItemId { get; set; }
         public int Quantity { get; set; }
         public int ProId{ get; set; }
-        public int OrdrId { get; set; }
+        
         public virtual  Order  order { get; set; }
         public virtual Product Products { get; set; }
         
         
         public override string ToString()
         {
-            return $"LineItemID {LineItemId}\nQuanity {Quantity}\nProductId {ProId}\nOrderId {OrdrId}";
+            return $"LineItemID {LineItemId}\nQuanity {Quantity}\nProductId {ProId}";
         }
 
     }

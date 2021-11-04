@@ -16,6 +16,7 @@ namespace RRDL.Entities
         public string CustName { get; set; }
         public string CustAddress { get; set; }
         public string CustPhone { get; set; }
+        public decimal Moneytrackercust { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
     }

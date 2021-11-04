@@ -31,15 +31,14 @@ namespace Models
                 
             } 
         }
-       
-       
+            
+        public decimal moneytracker { get; set; }   
         public List<Order> Orders { get; set; }
-
-        
+        public List<LineItem> inventory { get; set; }
       
         public override string ToString()
         {
-            return $"StoreId {ID}\nName {Name}\nAddress {Address}\nOrders {Orders}";
+            return $"StoreId {ID}\nName {Name}\nAddress {Address}\nOrders {Orders}\nMoney {moneytracker}";
         }
     }
 }

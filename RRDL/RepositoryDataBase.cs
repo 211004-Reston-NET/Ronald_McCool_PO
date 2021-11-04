@@ -35,6 +35,7 @@ namespace RRDL{
                     CustName=_mod.Name,
                     CustAddress=_mod.Address,
                     CustPhone=_mod.Phone,
+                    Moneytrackercust=_mod.moneytrackercust
                     
                 }
             );
@@ -57,16 +58,27 @@ namespace RRDL{
 
         public mod.Order AddModel(mod.Order _mod)
         {
-            _contex.Orders.Add(
+        var entity = 
                 new Entity.Order()
                 {
                     OrderId=_mod.OrderId,
                     OrderPrice=_mod.Price,
                     StoreId=_mod.StoreId,
                     CustId=_mod.CustId
-                }
-            );
+                };
+            
+           _contex.Orders.Add(entity);
             _contex.SaveChanges();
+           foreach(var lineI in _mod.LineItems) {
+               _contex.OrdersLineitems.Add(new Entity.OrdersLineitem(){
+                   OrderId= entity.OrderId,
+                   LineitemId=lineI.LineItemId,
+            
+                   
+               });
+           }
+           _mod.OrderId=entity.OrderId;
+           _contex.SaveChanges();
             return _mod;
         }
 
@@ -77,7 +89,8 @@ namespace RRDL{
                 {
                     StoreId=_mod.ID,
                     StoreName=_mod.Name,
-                    StoreAddress=_mod.Address
+                    StoreAddress=_mod.Address,
+                    Moneytraker=_mod.moneytracker
                     
                 }
             );
@@ -94,9 +107,9 @@ namespace RRDL{
                     Name=cust.CustName,
                     Address=cust.CustAddress,
                     Phone=cust.CustPhone,
+                    moneytrackercust=cust.Moneytrackercust,
                     Orders=cust.Orders.Select(ord=> new mod.Order(){
                     Price=ord.OrderPrice,
-                   // CustId=cust.CustId,
                     StoreId=(int)ord.StoreId
                     }).ToList()
                 }
@@ -125,12 +138,27 @@ namespace RRDL{
                     OrderId=order.OrderId,
                     Price=order.OrderPrice,
                     StoreId=order.StoreId,
-                    CustId=order.CustId
-                }
+                    CustId=order.CustId,
+                    LineItems=
+                        (from LI in _contex.Lineitems
+                        join oli in _contex.OrdersLineitems on LI.LineitemId equals oli.LineitemId
+                        where oli.OrderId==order.OrderId select 
+                        new mod.LineItem(){
+                            LineItemId=LI.LineitemId,
+                            Quantity=LI.LineitemQty,
+                            ProId=LI.ProdId,
+                        }).ToList()
+                }).ToList();
                 
-            ).ToList();
         }
-        public List<mod.Order> GetAllOrder(mod.Store p_store,mod.Customer p_cust)
+
+        public mod.Store GetStore(int p_storeId){
+            return GetAllStore().Find(id => id.ID==p_storeId);
+        }
+        public mod.Customer GetCust(int p_custId){
+            return GetAllCustomer().Find(id => id.Id==p_custId);
+        }
+       /* public List<mod.Order> GetAllOrder(mod.Store p_store,mod.Customer p_cust)
         {
 
 
@@ -146,7 +174,7 @@ namespace RRDL{
                      CustId=ord.CustId
                  });
              } 
-           /* return _contex.Orders.Select(order =>
+            return _contex.Orders.Select(order =>
            
                 new mod.Order()
                 {
@@ -156,9 +184,9 @@ namespace RRDL{
                     CustId=order.CustId
                 }
                 
-            ).ToList();*/
+            ).ToList();
             return orderList;
-        }
+        }*/
 
         public List<Order> getAllOrder(mod.Store p_store,mod.Customer p_cust)
         {
@@ -211,9 +239,21 @@ namespace RRDL{
                 {
                     ID=store.StoreId,
                     Name=store.StoreName,
-                    Address=store.StoreAddress
+                    Address=store.StoreAddress,
+                    moneytracker=store.Moneytraker,
+                    inventory=(from p in _contex.Lineitems
+                    join inv in _contex.Inventories on p.LineitemId equals inv.LineitemId
+                    where inv.StoreId == store.StoreId
+                    select new mod.LineItem(){
+                        LineItemId=p.LineitemId,
+                        Quantity=p.LineitemQty,
+                        ProId=p.ProdId
+                        
+                    }).ToList()
+                    
                 }
             ).ToList();
+    
         }
         public mod.Customer GetCustomerById(int p_id){
             Entity.Customer custToFind = _contex.Customers.Find(p_id);
