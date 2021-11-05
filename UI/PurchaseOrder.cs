@@ -29,9 +29,16 @@ namespace UI
             string choice = Console.ReadLine();
             switch(choice){
                 case "0":
-                System.Console.WriteLine("In the po class");
+               
+                
+           
+                
                 var listOfOrders=_porder.GetAllOrder();
-                  var listOfProd =_porder.GetAllProduct();
+                var listOfProd =_porder.GetAllProduct();
+           
+
+              
+                
                 foreach(Order orders in listOfOrders){
                     Store store=_porder.GetStore(orders.StoreId);
                     
@@ -41,15 +48,19 @@ namespace UI
                             if(store.inventory.Find(x=>x.LineItemId==l.LineItemId)!=null){
                                 if(store.inventory.Find(x=>x.LineItemId==l.LineItemId).Quantity > l.Quantity){
                                     store.inventory.Find(x=>x.LineItemId==l.LineItemId).Quantity-=l.Quantity;
-                                    store.moneytracker +=l.ProId;
+                                    store.moneytracker +=cust.moneytrackercust;
                                     cust.moneytrackercust-=l.Quantity * listOfProd.Find(x=>x.ProdId==l.ProId).ProdPrice;
                                     
                                 }
                             }
                         }
-                    
+                     List<Order> orders1 =_porder.getAllOrder(store, cust);
+                     {
+                         System.Console.WriteLine(orders1);
+                     }
 
                 }
+               
                
                    List<Customer> custById =_porder.GetAllCustomer();
                    
@@ -64,8 +75,10 @@ namespace UI
                 foreach(Order po in order){
                     Customer c = _porder.GetAllCustomer().Find(x => x.Id == po.CustId);
                     Store store=_porder.GetAllStore().Find(x=>x.ID==po.StoreId);
+                    System.Console.WriteLine(c.Name);
                 }
-                
+                System.Console.WriteLine();
+                ListTheOrders();
                 return MenuType.PurchaseOrder;
                 case "1":
                 return MenuType.MainMenu;

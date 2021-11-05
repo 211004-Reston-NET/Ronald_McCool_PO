@@ -48,7 +48,11 @@ namespace RRDL{
             _contex.Lineitems.Add(
                 new Entity.Lineitem()
                 {
-                    LineitemQty=_mod.Quantity
+                    LineitemId=_mod.LineItemId,
+                    LineitemQty=_mod.Quantity,
+                    ProdId=_mod.ProId,
+                    OrderId=_mod.OrderId
+
                 }
 
             );
@@ -119,6 +123,7 @@ namespace RRDL{
             ).ToList();
          
         }
+     
 
         public List<mod.LineItem> GetAllLineItem()
         {
@@ -208,7 +213,7 @@ namespace RRDL{
                           LineItemId=li.LineitemId,
                           Quantity=li.LineitemQty,
                           ProId=li.ProdId,
-                          OrdrId=li.OrderId
+                          OrderId=li.OrderId
                       }).ToList()*/
                      
                  });
